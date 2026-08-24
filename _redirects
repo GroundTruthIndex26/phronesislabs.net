@@ -1,0 +1,4 @@
+# Root-path icon requests browsers make without reading <link> tags.
+/favicon.ico  /assets/img/favicon.ico  301
+/apple-touch-icon.png  /assets/img/apple-touch-icon.png  301
+/apple-touch-icon-precomposed.png  /assets/img/apple-touch-icon.png  301

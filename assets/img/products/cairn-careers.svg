@@ -1,9 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Cairn Careers">
-<rect width="64" height="64" rx="14" fill="#EFE7D7"/>
-<ellipse cx="32" cy="47" rx="17" ry="6.5" fill="#B5694A"/>
-<ellipse cx="30" cy="38.5" rx="13.5" ry="5.8" fill="#A98E78"/>
-<ellipse cx="34" cy="30.5" rx="10.5" ry="5.2" fill="#B5694A"/>
-<ellipse cx="31" cy="23.5" rx="7.2" ry="4.3" fill="#A98E78"/>
-<ellipse cx="33" cy="18" rx="4.4" ry="3.2" fill="#B5694A"/>
-<rect x="0.55" y="0.55" width="62.9" height="62.9" rx="13.45" fill="none" stroke="#B5694A" stroke-width="1.0"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Cairn Careers"><rect width="64" height="64" rx="14" fill="#0B0B0B"/><g fill="#C7F94B"><ellipse cx="32" cy="46" rx="18" ry="6.4"/><ellipse cx="32" cy="34" rx="13" ry="5.6"/><ellipse cx="32" cy="24" rx="8.8" ry="4.6"/><ellipse cx="32" cy="16" rx="5.2" ry="3.4"/></g></svg>
