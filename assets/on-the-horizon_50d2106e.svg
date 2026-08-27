@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="On the horizon">
-  <defs><clipPath id="t"><rect width="64" height="64" rx="14"/></clipPath></defs>
-  <rect width="64" height="64" rx="14" fill="#F7F6F2"/>
-  <g clip-path="url(#t)"><g transform="rotate(-18 32 32)"><rect x="-46" y="11.5" width="156" height="11.0" fill="#EE5A1A"/><rect x="-46" y="26.5" width="156" height="11.0" fill="#C73B2C"/><rect x="-46" y="41.5" width="156" height="11.0" fill="#15263F"/></g></g>
-  <rect x="0.55" y="0.55" width="62.9" height="62.9" rx="13.45" fill="none" stroke="#15263F" stroke-width="1.0"/>
-</svg>
