@@ -71,7 +71,11 @@ async function emailSubmission(env, row) {
         "content-type": "application/json",
       },
       body: JSON.stringify({
-        from: env.RESEND_FROM || "Phronesis Labs <noreply@phronesislabs.net>",
+        /* Resend only allows a custom From once a domain is verified with DNS
+           records. onboarding@resend.dev works immediately and can deliver to the
+           address the Resend account was created with, so the form works on day
+           one; set RESEND_FROM later to send from phronesislabs.net. */
+        from: env.RESEND_FROM || "Phronesis Labs <onboarding@resend.dev>",
         to: [CONTACT_TO],
         reply_to: row.email,
         subject: `Idea for the lab - ${row.name}`,
