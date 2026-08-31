@@ -25,6 +25,17 @@ const LEGACY_HOSTS = {
   "about.phronesislabs.net": "/about/",
 };
 
+/* Root-path icon requests browsers make without reading <link> tags. These were
+   handled by a _redirects file until that turned out to be a Cloudflare Pages /
+   Netlify feature that the GitHub Pages origin ignores, leaving all three 404ing.
+   The Worker 301s them to the real assets. This lives here rather than in
+   _redirects because this Worker, not Pages, serves the site. */
+const ROOT_ICONS = {
+  "/favicon.ico": "/assets/img/favicon.ico",
+  "/apple-touch-icon.png": "/assets/img/apple-touch-icon.png",
+  "/apple-touch-icon-precomposed.png": "/assets/img/apple-touch-icon.png",
+};
+
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MAX = { name: 200, email: 320, message: 5000, help: 300 };
 const MAX_BODY_BYTES = 32 * 1024;
@@ -165,6 +176,9 @@ function cacheControlFor(pathname) {
 
 async function handle(request, env) {
   const url = new URL(request.url);
+
+  const icon = ROOT_ICONS[url.pathname];
+  if (icon) return Response.redirect(new URL(icon, "https://phronesislabs.net").toString(), 301);
 
   const redirect = legacyRedirect(url);
   if (redirect) return redirect;
