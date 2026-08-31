@@ -17,7 +17,9 @@ const ORIGIN_BASE = "https://groundtruthindex26.github.io/phronesislabs.net/";
 const CONTACT_TO = "contact@phronesislabs.net";
 
 /* Legacy hostnames that used to serve duplicates of these pages. They are now
-   301'd to the canonical apex path instead of rendering the same content twice. */
+   301'd to the canonical apex path instead of rendering the same content twice.
+   Whatever path a request arrives on, it resolves to the one page that replaced
+   that hostname - see legacyRedirect. */
 const LEGACY_HOSTS = {
   "the-lab.phronesislabs.net": "/the-lab/",
   "about.phronesislabs.net": "/about/",
@@ -39,8 +41,12 @@ const json = (data, status) =>
 function legacyRedirect(url) {
   const target = LEGACY_HOSTS[url.hostname.toLowerCase()];
   if (!target) return null;
-  const rest = url.pathname.replace(/^\/+/, "");
-  const to = new URL(target + rest + url.search, "https://phronesislabs.net");
+  /* Every path on a legacy host lands on the page that replaced it. Appending
+     the leftover path instead sent old deep links somewhere that does not
+     exist: about.phronesislabs.net/contact/ became /about/contact/, a 404 that
+     a 301 had just told search engines was the right answer. The query string
+     is kept so campaign parameters survive the redirect. */
+  const to = new URL(target + url.search, "https://phronesislabs.net");
   return Response.redirect(to.toString(), 301);
 }
 

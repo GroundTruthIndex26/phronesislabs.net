@@ -1,4 +1,14 @@
+# Cloudflare's Managed robots.txt (AI Crawl Control -> Signals) used to prepend
+# a block of AI-crawler Disallow rules to this file at the edge. It was turned
+# off because it is a single zone-wide switch: it could not allow
+# Google-Extended - which gates AI Overviews and Gemini grounding - without
+# allowing everything, and it was not enforcing anything either, since AI Crawl
+# Control -> Security has every enforcement toggle off. Content-Signal carries
+# the same preference this file always meant: index it, cite it, do not train
+# on it.
+
 User-agent: *
+Content-Signal: search=yes,ai-train=no,use=reference
 Allow: /
 
 Sitemap: https://phronesislabs.net/sitemap.xml
