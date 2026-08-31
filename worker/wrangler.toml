@@ -1,0 +1,12 @@
+name = "phronesislabs-net"
+main = "index.js"
+compatibility_date = "2025-01-01"
+
+# Routes and custom domains are intentionally NOT declared here. Deploy with
+# `wrangler versions upload` + `wrangler versions deploy` so existing triggers
+# for phronesislabs.net, the-lab. and about. are left untouched.
+
+[[d1_databases]]
+binding = "CONTACT_DB"
+database_name = "phronesislabs-contact"
+database_id = "3f63cfa0-e96e-4a21-a8f9-81031432d458"
