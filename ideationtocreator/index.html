@@ -4,9 +4,9 @@
     <!-- Phronesis Labs preview: preserve the existing brand, Greek slogan, and calm editorial character. -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <meta name="description" content="Phronesis Labs is a considered match market for worthwhile SaaS ideas and the people with the craft to help make them real." />
+    <meta name="description" content="Ideation to Creation: Phronesis Labs brings people holding a worthwhile SaaS idea together with the craft to build it, from first sketch to a thing that exists." />
     <link rel="icon" type="image/png" href="/ideationtocreator/assets/phronesis-phi-mark_a8d1f1c0.png" />
-    <title>Phronesis Labs: a thought lab and match market</title>
+    <title>Ideation to Creation | Phronesis Labs</title>
     <script type="module" crossorigin src="/ideationtocreator/assets/index-cQ0u46WG.js"></script>
     <link rel="stylesheet" crossorigin href="/ideationtocreator/assets/index-Dn80Ad9U.css">
   </head>
@@ -73,5 +73,22 @@ Error generating stack: `+l.message+`
 
     <div id="root"></div>
     <script defer src="https://manus-analytics.com/umami" data-website-id="66bd8d9c-7026-46cd-9455-b9a2d1059c26"></script>
-  </body>
+  <script>
+/* The SPA's intake form has no backend. Carry what was typed over to
+   /contact/, which composes a real email to contact@phronesislabs.net. */
+document.addEventListener('submit', function(e){
+  var f = e.target && e.target.closest && e.target.closest('.intake-form');
+  if(!f) return;
+  e.preventDefault(); e.stopPropagation();
+  try{
+    var v=[].slice.call(f.querySelectorAll('textarea,input'))
+             .filter(function(el){var t=(el.type||'text').toLowerCase();
+               return t!=='submit'&&t!=='button'&&t!=='hidden'&&t!=='checkbox'&&t!=='radio';})
+             .map(function(el){return (el.value||'').trim();});
+    sessionStorage.setItem('pl_intake', JSON.stringify(v));
+  }catch(err){}
+  window.location.href='/contact/';
+}, true);
+</script>
+</body>
 </html>
