@@ -201,9 +201,12 @@ implementation to copy from.
 
 Published previews, for reviewing the motion without running a server:
 
-- The Bench: https://claude.ai/code/artifact/184650f6-f93b-40b3-a47a-0515165fa1e6
-- The Instrument: https://claude.ai/code/artifact/35479917-47b7-46f9-b6cd-8016a6b3b3b6
-- The Brief: https://claude.ai/code/artifact/b7123ae1-3d32-4a22-9947-0864165b0031
+- A, The Bench: https://claude.ai/code/artifact/184650f6-f93b-40b3-a47a-0515165fa1e6
+- B, The Instrument: https://claude.ai/code/artifact/35479917-47b7-46f9-b6cd-8016a6b3b3b6
+- C, The Brief: https://claude.ai/code/artifact/b7123ae1-3d32-4a22-9947-0864165b0031
+- D, The Statement: https://claude.ai/code/artifact/f74e7281-754e-4cfe-94b9-a5da0d705e0a
+- E, The Ledger: https://claude.ai/code/artifact/27843515-6de1-4145-bc86-c79641ede028
+- F, The Mosaic: https://claude.ai/code/artifact/43534f2a-b323-4e5a-b258-5ced7e3b4101
 
 ---
 
