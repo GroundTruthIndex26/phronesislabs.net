@@ -107,7 +107,7 @@ Two things in it:
 
 1. `index.html` headings rewritten for answer engines, plus matching title, meta
    description, Open Graph, Twitter card and the `WebPage` JSON-LD node. Live copy.
-2. `previews/` holds three directions for a redesigned home page, all `noindex` and
+2. `previews/` holds six directions for a redesigned home page, all `noindex` and
    disallowed in `robots.txt`. They are for choosing between, not for merging.
 
 ### The pending decision
@@ -119,13 +119,18 @@ The site owner picks one direction. Then:
 - the other two directions and the `previews/` folder are deleted
 - only then does the pull request merge
 
-The three, all sharing `previews/pl.css` and `previews/pl.js`:
+All six share `previews/pl.css` and `previews/pl.js`, which own the tokens, header,
+footer, buttons, pills and reveals. A, B and C change only the hero and share one body.
+D, E and F change the whole page structure and add `previews/pl2.css` and `previews/pl2.js`.
 
-| Path | Name | Hero |
+| Path | Name | What is different |
 |---|---|---|
 | `previews/a/` | The Bench | full bleed photograph that drifts, pulsing markers, a reticle that walks the image reading ideas as they pass or fail the test |
 | `previews/b/` | The Instrument | a plate floating on a dark ground, tilting toward the cursor, a live data card, a numbered spec list |
 | `previews/c/` | The Brief | a cream reading column against a full height annotated frame |
+| `previews/d/` | The Statement | type led throughout. Centred display type on near black inside three slowly turning rings, then single sentence sections. Almost no chrome, no cards, no photographs below the hero. |
+| `previews/e/` | The Ledger | instrument led. A live review ledger beside the headline stamps ideas Pass or Declined on a timer, driven by `pl2.js`. Stages, questions and the lab are all hairline table rows. |
+| `previews/f/` | The Mosaic | module led. The hero is a tile grid that assembles on load with the headline on a solid orange tile, and every section below uses the same tile system. |
 
 ### The visual direction, and why
 
@@ -178,6 +183,10 @@ implementation to copy from.
   `ideationtocreator/assets/`. The originals are 2 to 6 MB each. Never link the originals
   from a page.
 - All motion is wrapped for `prefers-reduced-motion: reduce`.
+- The ledger in direction E recycles its rows into `.lbody`, not into the panel, or the
+  running totals end up in the middle of the list.
+- Direction D centres its hero type, which drags the absolutely positioned corner labels
+  with it unless they set their own `text-align`.
 
 ---
 
