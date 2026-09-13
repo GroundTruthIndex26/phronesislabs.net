@@ -10,5 +10,7 @@
 User-agent: *
 Content-Signal: search=yes,ai-train=no,use=reference
 Allow: /
+# Internal design previews for the new home page
+Disallow: /previews/
 
 Sitemap: https://phronesislabs.net/sitemap.xml
